@@ -1,6 +1,8 @@
 package com.controller;
 
 import com.model.testPojo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,6 +26,8 @@ public class testController {
     @Autowired
     testService service;
 
+    public final Logger logger = LoggerFactory.getLogger(testController.class);
+
     @RequestMapping(value = "/add/{id}/{username}")
     public String addPojo(@PathVariable(value = "id")int id,
                           @PathVariable(value = "username")String username){
@@ -37,6 +41,7 @@ public class testController {
     @RequestMapping(value = "")
     public String test(){
         System.out.println("test ++++++++++++++++++++++++++++++++");
+        logger.info("start method:{}","test");
         List<testPojo> list = new ArrayList<testPojo>();
         list.add(new testPojo(13,"gagaf"));
         list.add(new testPojo(14,"ffafaf"));
