@@ -15,6 +15,23 @@
 		http://www.springframework.org/schema/tx
 		http://www.springframework.org/schema/tx/spring-tx-4.3.xsd ">
 
+    <tx:annotation-driven/>
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <!--<aop:aspectj-autoproxy proxy-target-class="true"/>-->
+    <!--<aop:config>-->
+        <!--<aop:aspect ref="aopBean"-->
+    <!--</aop:config>-->
+
+
+
+
+
+
+
+
 
     <!--&lt;!&ndash; 事务管理器 对mybatis操作数据库事务控制，spring使用jdbc的事务控制类 &ndash;&gt;-->
     <!--<bean id="transactionManager"-->
@@ -41,7 +58,7 @@
                      <!--pointcut="execution(* com.service.impl.*.*(..))" />-->
     <!--</aop:config>-->
 
-    <aop:config proxy-target-class="true"/>
+    <!--<aop:config proxy-target-class="true"/>-->
     <!--<aop:config>-->
         <!--&lt;!&ndash;定义切面&ndash;&gt;-->
         <!--<aop:aspect id="logAspect" ref="logInterceptor">-->

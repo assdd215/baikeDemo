@@ -9,6 +9,11 @@ public class testPojo {
 
     public testPojo(){}
 
+    public testPojo(int id,String username){
+        this.id = id;
+        this.username = username;
+    }
+
     public void setId(int id) {
         this.id = id;
     }

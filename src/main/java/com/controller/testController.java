@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.service.testService;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by Aria on 2017/2/10.
  */
@@ -34,6 +37,11 @@ public class testController {
     @RequestMapping(value = "")
     public String test(){
         System.out.println("test ++++++++++++++++++++++++++++++++");
+        List<testPojo> list = new ArrayList<testPojo>();
+        list.add(new testPojo(13,"gagaf"));
+        list.add(new testPojo(14,"ffafaf"));
+        list.add(new testPojo(1,"55555"));
+        service.insert(list);
         return "test";
     }
 }
