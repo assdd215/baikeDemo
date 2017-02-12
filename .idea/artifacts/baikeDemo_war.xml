@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="baikeDemo:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="Aria.war">
+      <element id="artifact" artifact-name="baikeDemo:war exploded" />
+    </root>
+  </artifact>
+</component>
